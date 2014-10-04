@@ -16,9 +16,7 @@ $pkg_cache = '/srv/pkg/cache/';
 
 // END Config
 
-// TODO make it a 404 handler
-// TODO use stream_socket_client, to support 
-// TODO parse package name and remove older packages
+
 
 function hasExtension($url, $exts) {
 
@@ -59,7 +57,6 @@ if(hasExtension($request, array('.tar.xz', '.tar.xz.sig', '.db', '.db.sig'))) {
 	}
 
 	// figure out upstream mirror
-
 	$repo = substr($request, 1, strpos($request, '/', 1)-1);
 	$pkg = substr($request, strpos($request, '/', 1)+1);
 
