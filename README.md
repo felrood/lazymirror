@@ -1,4 +1,5 @@
-# Lazymirror, an efficient mirror for Archlinux packages
+# Lazymirror
+**An efficient mirror for Archlinux packages**
 
 (small warning: not all functionality is yet implemented, see TODO)
 
