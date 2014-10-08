@@ -31,10 +31,9 @@ mimetype.assign		= (
 
 server.modules = (
 	"mod_fastcgi"
-	"mod_rewrite"
 )
 
-url.rewrite-once = ("" => "index.php")
+server.error-handler-404 = "index.php"
 
 fastcgi.server = (
     ".php" => (
@@ -43,7 +42,7 @@ fastcgi.server = (
         "socket" => "/var/run/lighttpd/php-fastcgi.sock",
         "max-procs" => 2,
         "bin-environment" => (
-          "PHP_FCGI_CHILDREN" => "4",
+          "PHP_FCGI_CHILDREN" => "1",
         ),
         "broken-scriptfilename" => "enable"
       ))
@@ -66,7 +65,4 @@ Make sure the ``$upstream`` array knows about the repo!
 
 ## TODO
 
-- make it a 404 handler (more efficient and adds support for custom repositories)
-- use stream_socket_client, to support 'Content-Length' header
 - parse package name and remove older packages
-- make db timout configurable
